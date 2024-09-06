@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import { Moon, Sun } from 'lucide-react';
 
 const ThemeSwitcher = () => {
     const [mounted, setMounted] = useState(false);
@@ -16,12 +17,14 @@ const ThemeSwitcher = () => {
         return null;
     }
     return (
-        <div className="bg-background text-primary-green">
-            The current theme is: {theme || resolvedTheme}
-            <br />
-            <button onClick={() => setTheme('light')}>Light Mode</button>
-            <br />
-            <button onClick={() => setTheme('dark')}>Dark Mode</button>
+        <div className="bg-background text-primary-green absolute pt-2 pl-2">
+            <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle Dark Mode"
+            >
+                {theme === 'dark' ? <Moon className="text-yellow-500" /> : <Sun className="text-black-500" />}
+            </button>
         </div>
     );
 };
