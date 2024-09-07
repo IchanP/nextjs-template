@@ -34,6 +34,9 @@ export default function RootLayout({
           <ThemeSwitcher />
           {children}
         </Providers>
+        <footer className="row-start-3 flex gap-4 sm:gap-6 flex-wrap items-center justify-center">
+          <p className="text-sm sm:text-base">Template</p>
+        </footer>
       </body>
     </html>
   );

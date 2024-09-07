@@ -6,9 +6,6 @@ export default function Home() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl">Template</h1>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-4 sm:gap-6 flex-wrap items-center justify-center">
-        <p className="text-sm sm:text-base">Template</p>
-      </footer>
     </div>
   );
 }
