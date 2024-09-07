@@ -7,17 +7,16 @@
   ],
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": "error", 
-    "@typescript-eslint/explicit-function-return-type": "off", 
+    "prettier/prettier": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "warn",
-    "linebreak-style": ["error", "unix"] // Use "unix" for LF and "windows" for CRLF if needed
+    "linebreak-style": "off" // Disable this if you're working across multiple OS environments
   },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {
-        // You can add specific rules for TS/TSX files here if needed
-      }
+      "rules": {}
     }
-  ]
+  ],
+  "ignorePatterns": ["node_modules/", "dist/", "build/"]
 }
