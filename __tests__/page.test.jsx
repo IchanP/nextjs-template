@@ -5,14 +5,17 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
 // TODO fix this as getMessages is not supported in client components
-/* beforeAll(async () => {
-  messages = await getMessages();
-}); */
+const locale = "en";
+const messages = {
+  HomePage: {
+    welcome: "Welcome!",
+  },
+};
 
 describe("Page", () => {
   it("renders a heading", () => {
     render(
-      <NextIntlClientProvider locale="en">
+      <NextIntlClientProvider locale={locale} messages={messages}>
         <Home />
       </NextIntlClientProvider>,
     );
@@ -20,4 +23,3 @@ describe("Page", () => {
     expect(heading).toBeInTheDocument();
   });
 });
-
